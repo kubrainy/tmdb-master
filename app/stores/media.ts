@@ -26,7 +26,6 @@ export const useMediaStore = defineStore('MediaStore', () => {
     Tv.value.push(...data.results)
   }
 
-
   return {
     fetchMovieList,
     Tv,

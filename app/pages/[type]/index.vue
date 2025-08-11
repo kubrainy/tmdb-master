@@ -25,7 +25,7 @@ const mediaItems = computed(() => {
 
 <template>
   <div class="p-4">
-    <h1 class="text-xl font-bold mb-4 text-cyan-500 text-center">
+    <h1 class="text-xl font-bold mb-4 text-amber-400 text-center">
       {{ type === 'movie' ? 'FİLMLER' : 'DİZİLER' }}
     </h1>
 

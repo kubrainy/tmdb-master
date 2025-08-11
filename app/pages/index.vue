@@ -7,7 +7,7 @@ const mediaStore = useMediaStore()
 
 <template>
   <div class="p-6">
-    <h2 class="text-l font-bold mb-2 border border-gray-400 p-4 rounded-md w-fit mt-2">
+    <h2 class="text-l font-bold mb-2 border border-amber-400 p-4 rounded-md w-fit mt-2 text-amber-400">
       Filmler
     </h2>
     <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
@@ -16,7 +16,7 @@ const mediaStore = useMediaStore()
       </div>
     </div>
 
-    <h2 class="text-l font-bold mb-2 border border-gray-400 p-4 rounded-md w-fit mt-6">
+    <h2 class="text-l font-bold mb-2 border border-amber-400 p-4 rounded-md w-fit mt-6 text-amber-400">
       Diziler
     </h2>
     <div class="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">

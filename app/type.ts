@@ -40,6 +40,9 @@ export interface Media {
   external_ids?: ExternalIds
   // cast
   character?: string
+  spoken_languages?: string
+  number_of_seasons?: number
+  number_of_episodes?: number
 }
 
 export interface Person {
@@ -125,5 +128,5 @@ export interface QueryItem {
 }
 
 export interface Credits {
-  cast: Media[]
+  cast: Person[]
 }

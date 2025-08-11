@@ -39,9 +39,7 @@ const items = ref<NavigationMenuItem[][]>
 </script>
 
 <template>
-  <header class="w-full border-b-2 border-cyan-600 h-14">
-    <div class="pl-4 ">
-      <UNavigationMenu color="neutral" variant="link" :items="items" class="w-full" size="xl" />
-    </div>
+  <header class="w-full border-b-2 border-amber-400 h-14 flex items-center">
+    <UNavigationMenu color="primary" variant="link" :items="items" class="w-full" size="xl" />
   </header>
 </template>
