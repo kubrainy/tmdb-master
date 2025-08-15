@@ -21,7 +21,13 @@ const items = ref<NavigationMenuItem[][]>
       to: { name: 'list', params: { type: 'movie' } },
 
     },
+    {
+      label: 'Search',
+      icon: 'lucide:search',
+      to: { name: 'search' },
+    },
   ],
+
   [
     {
       icon: 'lucide:sun',

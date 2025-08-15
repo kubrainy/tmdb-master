@@ -1,6 +1,7 @@
 export type MediaType = 'movie' | 'tv'
 
 export interface Media {
+
   adult: boolean
   backdrop_path: string
   genre_ids: number[]
@@ -20,6 +21,7 @@ export interface Media {
   media_type?: MediaType
   // details
   homepage?: string
+  reviews?: string
   runtime?: number
   budget?: number
   revenue?: number
@@ -129,4 +131,18 @@ export interface QueryItem {
 
 export interface Credits {
   cast: Person[]
+}
+export interface Review {
+  author: string
+  author_details: {
+    name: string
+    username: string
+    avatar_path: string | null
+    rating: number | null
+  }
+  content: string
+  created_at: string
+  id: string
+  updated_at: string
+  url: string
 }

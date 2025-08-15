@@ -1,26 +1,29 @@
 <script setup lang="ts">
+import type { MediaType } from '~/type'
+
 definePageMeta({
   name: 'list',
 })
 const route = useRoute()
 const router = useRouter()
 const mediaStore = useMediaStore()
-const type = route.params.type as 'tv' | 'movie'
+const type = route.params.type as MediaType
 
 onMounted(async () => {
-  if (type === 'movie') {
-    mediaStore.Movies = []
-    await mediaStore.fetchMovieList()
-  }
-  else if (type === 'tv') {
-    mediaStore.Tv = []
-    await mediaStore.fetchTvList()
-  }
+  await mediaStore.fetchMedias(type)
+  // if (type === 'movie') {
+  //   mediaStore.Movies = []
+  //   await mediaStore.fetchMovieList()
+  // }
+  // else if (type === 'tv') {
+  //   mediaStore.Tv = []
+  //   await mediaStore.fetchTvList()
+  // }
 })
 
-const mediaItems = computed(() => {
-  return type === 'movie' ? mediaStore.Movies : mediaStore.Tv
-})
+// const mediaItems = computed(() => {
+//   return type === 'movie' ? mediaStore.Movies : mediaStore.Tv
+// })
 </script>
 
 <template>
@@ -31,9 +34,9 @@ const mediaItems = computed(() => {
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       <div
-        v-for="item in mediaItems"
+        v-for="item in mediaStore.medias"
         :key="item.id"
-        class="rounded-lg shadow flex flex-col items-center cursor-pointer"
+        class="rounded-lg  shadow-md hover:shadow-[0_0_15px_#facc15] transition-shadow duration-300 flex flex-col items-center cursor-pointer"
         @click="router.push({
           name: 'detail',
           params: {
