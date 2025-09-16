@@ -8,8 +8,8 @@ useHead({
 onMounted(async () => {
   // await mediaStore.fetchMovieList()
   // await mediaStore.fetchTvList()
-  await mediaStore.fetchMedias('movie')
-  await mediaStore.fetchMedias('tv')
+  await mediaStore.fetchMedias({ mediaType: 'movie' })
+  await mediaStore.fetchMedias({ mediaType: 'tv' })
 })
 </script>
 

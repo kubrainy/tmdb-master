@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import type { Media, MediaType } from '~/type'
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useSearchStore } from '~/stores/search'
+
 
 definePageMeta({
   name: 'search',
@@ -23,21 +20,27 @@ async function doSearch() {
 <template>
   <div class="p-4">
     <div class="w-full sm:w-3/5 mx-auto mb-6">
-      <div class="flex gap-2">
-        <input
-          v-model="searchInput"
-          placeholder="Aramak istediğiniz filmi ya da diziyi yazın..."
-          class="border p-2 rounded flex-grow"
-          @keyup.enter="doSearch"
-        >
-        <UButton
-          icon="i-lucide-search"
-          label="Ara"
-          class="bg-amber-400 text-white px-4"
-          @click="doSearch"
-        />
+      <div class="w-full flex flex-row items-center gap-2  rounded p-2">
+        <UButtonGroup class="w-full">
+          <UInput
+            v-model="searchInput"
+            size="xl"
+            placeholder="Aramak istediğiniz filmi ya da diziyi yazın..."
+            icon="i-lucide-search"
+            class="w-full"
+            @keyup.enter="doSearch"
+          />
+          <UButton
+            size="xl"
+            icon="i-lucide-search"
+            label="Ara"
+            class="bg-amber-400 text-white px-4"
+            @click="doSearch"
+          />
+        </UButtonGroup>
       </div>
     </div>
+ 
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       <div

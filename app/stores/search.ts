@@ -1,5 +1,3 @@
-import type { Media, MediaType } from '~/type'
-
 export const useSearchStore = defineStore('SearchStore', () => {
   const accessToken = ref(useRuntimeConfig().public.accessToken)
   const searchResults = ref<Media[]>([])
@@ -22,7 +20,7 @@ export const useSearchStore = defineStore('SearchStore', () => {
   }
 
   return {
-    accessToken,
+
     searchResults,
     searchQuery,
     searchDetail,

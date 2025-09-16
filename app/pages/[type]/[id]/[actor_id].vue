@@ -1,32 +1,29 @@
 <script setup lang="ts">
-import type { MediaType } from '~/type'
-import { useRoute } from 'vue-router'
-
 definePageMeta({
   name: 'actor-detail',
 })
 
 const route = useRoute()
-const DetailStore = useDetailStore()
+const mediaStore = useMediaStore()
 const id = Number(route.params.id)
 const mediaType = route.params.type as MediaType
 
 onMounted(async () => {
-  await DetailStore.fetchDetail(id, mediaType)
+  await mediaStore.fetchCredits({ id, mediaType })
 })
 </script>
 
 <template>
   <div>
-    <h1 class="text-xl font-bold mb-4 text-center text-amber-400 mt-2">
+    <h1 class="text-xl font-bold mb-4 text-center text-primary-400 mt-2">
       {{ mediaType === 'movie' ? 'Film Oyuncuları' : 'Dizi Oyuncuları' }}
     </h1>
     <div class="w-full sm:w-4/5 mx-auto p-2 flex flex-col">
       <div class="w-full sm:w-4/5 mx-auto p-2 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <div
-          v-for="actor in DetailStore.Credits"
+          v-for="actor in mediaStore.Credits"
           :key="actor.id"
-          class="border-2 border-amber-200 rounded-lg p-2 text-center"
+          class="border-2 border-amber-400 dark:border-amber-200  rounded-lg p-2 text-center"
         >
           <img
             v-if="actor.profile_path"
