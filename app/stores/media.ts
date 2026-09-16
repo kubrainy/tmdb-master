@@ -56,7 +56,7 @@ export const useMediaStore = defineStore('MediaStore', () => {
       options,
     )
     const data = await response.json()
-    reviews.value = data
+    reviews.value = data.results as Review[]
   }
 
   async function fetchDetail(req: fetchDetailAllReq) {

@@ -188,7 +188,7 @@ watch(() => route.params.id, async (newId) => {
         <p class="text-gray-400 text-sm mb-2">
           İlginizi çekebilecek benzer filmleri aşağıdan görüntüleyebilirsiniz.
         </p>
-        <div v-if="mediaStore.reviews.length > 0" class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
+        <div v-if="(mediaStore.similar ?? []).length > 0" class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory">
           <SimilarItem v-for="item in mediaStore.similar ?? []" :key="item.id" :item />
         </div>
         <div v-else class="text-white text-lg font-semibold text-center">
