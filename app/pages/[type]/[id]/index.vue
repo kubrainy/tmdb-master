@@ -20,6 +20,10 @@ function toggleReview(review: Review) {
   review.showFull = !review.showFull
 }
 
+function toggleAllReviews() {
+  showAllReviews.value = !showAllReviews.value
+}
+
 const items = [
   {
     label: 'Video',
@@ -227,7 +231,7 @@ watch(() => route.params.id, async (newId) => {
             </div>
 
             <div v-if="(mediaStore.reviews ?? []).length > 3" class="text-center mt-4">
-              <UButton color="warning" variant="soft" size="sm" @click="showAllReviews = !showAllReviews">
+              <UButton color="warning" variant="soft" size="sm" @click="toggleAllReviews">
                 {{ showAllReviews ? "Daha az yorum göster" : "Devamını gör" }}
               </UButton>
             </div>

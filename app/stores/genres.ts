@@ -1,5 +1,4 @@
 export const useGenresStore = defineStore('GenresStore', () => {
-  
   const accessToken = ref(useRuntimeConfig().public.accessToken)
   const genres = ref<{ id: number, name: string }[]>([])
 
@@ -21,7 +20,7 @@ export const useGenresStore = defineStore('GenresStore', () => {
 
     return data.genres
   }
-  
+
   return {
     genres,
     fetchGenres,

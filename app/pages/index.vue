@@ -7,7 +7,6 @@ const mediaStore = useMediaStore()
 const movies = ref<Media[]>([])
 const tvSeries = ref<Media[]>([])
 
-
 onMounted(async () => {
   await mediaStore.fetchMedias({ mediaType: 'movie' })
   movies.value = mediaStore.movies
